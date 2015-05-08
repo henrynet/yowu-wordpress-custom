@@ -1,0 +1,62 @@
+﻿<!-- Add to index.php -->
+<style>
+.category-more {
+	font-size: 22px;
+	font-family: 'Open Sans', xingothic-tc-w4, 微軟正黑體, 'Microsoft JhengHei';
+	letter-spacing: 1px;
+}
+.category-more .icon-arrow {
+	width: 20px;
+	height: 20px;
+	margin: 5px 5px 5px 15px;
+	vertical-align: bottom;
+}
+.category-more .menu {
+	margin-bottom: 0px;
+	padding-left: 0px;
+	list-style: none;
+	display: inline-block;
+}
+.category-more .menu li {
+	display: inline-block;
+	margin: 5px 0;
+	padding: 0;
+}
+@media screen and (min-width: 768px){
+	.category-more .menu li {
+		width: auto;
+		float: none;
+	}
+}
+.category-more .menu .sub-menu {
+	padding: 0;
+}
+.category-more .menu li.menu-item {
+	padding: 0 15px;
+	border-right: 1px solid #999;
+}
+.category-more .menu li:last-child {
+	border-right: 0px;
+}
+.category-more .menu li.menu-item a {
+	color: black;
+}
+.category-more .menu li.menu-item a:hover {
+	color: #666666;
+}
+</style>
+
+<div class="category-more col-md-10 col-md-offset-1 col-sm-12 no-padding text-center">
+	<ul class="menu">
+		<li class="col-xs-12">閱讀更多<img class="icon-arrow" src="https://yowureport.com/wp-content/themes/yowureport/css/img/yowu-logoarrow.png" alt="arrow" id="exifviewer-img-16" exifid="-1420780292" oldsrc="https://yowureport.com/wp-content/themes/yowureport/css/img/yowu-logoarrow.png"></li>
+	</ul>
+<?php
+         $args = array(
+            'theme_location' => 'main-menu',
+            'walker'         => new Custom_Category_Nav_Walker(),
+            'menu_class'     => 'menu',
+            'container'      => false,
+         );
+         wp_nav_menu( $args );
+?>
+</div>
